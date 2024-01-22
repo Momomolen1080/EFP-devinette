@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>devinette</h1>
+    <label for="texte">numéro aléatoire
+        <input type="texte" id="texte" value="" />
+    </label>
+    <button id="btn">GO</button>
+    
+
+    <h2 id="welcome"></h2>
+    <script>
+        let number,guess, message;
+        let action, display, input;
+
+        number = Math.floor(Math.random() * 10 ) + 1;
+        console.log(number);
+        
+        action = document.getElementById('btn')
+        console.log(action)
+
+        action.addEventListener('click', () => {
+            input = document.getElementById('texte')
+            guess = input.value
+
+            if (number > guess) {
+                message = 'est plus grand';
+            }
+            else if (number < guess) {
+                message = 'est plus petit';
+            }
+            else {
+                message = 'est la bonne réponse';
+
+            }
+
+
+            display = document.getElementById('welcome');
+            display.innerHTML = message;
+            
+
+
+        })
+
+    </script>
+</body>
+
+</html>
